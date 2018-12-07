@@ -17,7 +17,7 @@
   width: calc(50% - 10px);
   margin-bottom: 10px;
   @media (--bp-md) {
-    width: calc(33.3333% - 10px);
+    width: calc(25% - 10px);
   }
   & img {
     width: 100%;

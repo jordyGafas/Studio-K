@@ -1,0 +1,26 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  overflow: -moz-scrollbars-vertical;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-family: 'Interstate', sans-serif;
+  overflow-x: hidden;
+}
+body {
+  background: var(--color-primary);
+  font-size: 1.6rem;
+  font-family: var(--font-normal);
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Interstate', sans-serif;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}

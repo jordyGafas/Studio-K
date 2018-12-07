@@ -1,0 +1,45 @@
+body.login {
+  background: #F4F4F4;
+}
+body.login div#login {  }
+body.login div#login h1 {  }
+body.login div#login h1 a {
+  width: 100%;
+  background-image: url('../../img/logo.svg');
+  background-size: 250px 70px;
+  background-position: 50%;
+  margin-bottom: 0;
+}
+body.login div#login p.message {
+  border-radius: 4px;
+}
+
+// FORM
+body.login div#login form#loginform {
+  border-radius: 4px;
+}
+body.login div#login form#loginform p {}
+body.login div#login form#loginform p label {  }
+body.login div#login form#loginform input { box-shadow: none; }
+body.login div#login form#loginform input:focus { }
+body.login div#login form#loginform input#user_login {}
+body.login div#login form#loginform input#user_pass {}
+body.login div#login form#loginform p.forgetmenot {  }
+body.login div#login form#loginform p.forgetmenot input#rememberme {  }
+body.login div#login form#loginform p.submit { }
+body.login div#login form#loginform p.submit input#wp-submit { background-color: #2C2D85; border-color: #2C2D85; text-shadow: none; box-shadow: none; }
+body.login div#login form#loginform p.submit input#wp-submit:hover {  }
+
+body.login input[type=checkbox]:checked:before {
+  color: #2C2D85;
+}
+
+// FORM
+body.login div#login p#nav { }
+body.login div#login p#nav a { color: #2C2D85; opacity: .5; }
+body.login div#login p#nav a:hover { opacity: 1; }
+
+// BACK TO
+body.login div#login p#backtoblog { }
+body.login div#login p#backtoblog a { color: #2C2D85; opacity: .5; }
+body.login div#login p#backtoblog a:hover { opacity: 1; }

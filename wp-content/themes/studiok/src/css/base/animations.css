@@ -1,0 +1,31 @@
+/* ----------------------------------------
+  ANIMATIONS
+---------------------------------------- */
+@keyframes arrowUpDown {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 10px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0px, 0);
+  }
+}
+@keyframes dragSlide {
+  0% {
+    transform: translate3d(0, 0, 0) scale(.9);
+  }
+  25% {
+    transform: translate3d(0, 0, 0) scale(.8);
+  }
+  45% {
+    transform: translate3d(-5px, 0, 0) scale(.8);
+  }
+  65% {
+    transform: translate3d(5px, 0, 0) scale(.8);
+  }
+  100% {
+    transform: translate3d(0px, 0, 0) scale(.9);
+  }
+}

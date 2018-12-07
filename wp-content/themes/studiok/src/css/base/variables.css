@@ -1,0 +1,25 @@
+:root {
+  --color-black: rgb(0,0,0);
+  --color-white: #ffffff;
+  --color-grey-90: #1A1919;
+  --color-grey-70: #7C7C7C;
+  --color-grey-50: #A8A8A8;
+  --color-grey-30: #D5D5D5;
+  --color-grey-10: #F4F4F4;
+  --color-yellow: #ffd200;
+  --color-blue: #6695a4;
+  --font-normal: 'Interstate', sans-serif, 'PT Sans', "Helvetica Neue", Helvetica, Verdana, Geneva, Arial, sans-serif;
+  --border-radius: 8px;
+  --max-width: 160rem;
+  --max-width-large: 180rem;
+  --opacity-half: 0.5;
+  --hero-scale: 1;
+  --easeInOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@custom-media --bp-sm (min-width: 544px);
+@custom-media --bp-md (min-width: 768px);
+@custom-media --bp-lg (min-width: 1024px);
+@custom-media --bp-xl (min-width: 1280px);
+@custom-media --bp-xxl (min-width: 1440px);
+@custom-media --bp-xxxl (min-width: 2000px);

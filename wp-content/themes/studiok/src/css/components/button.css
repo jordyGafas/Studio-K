@@ -1,0 +1,87 @@
+/* ----------------------------------------
+BUTTON
+---------------------------------------- */
+.c-button,
+.button {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border-radius: 0;
+  background: transparent;
+  appearance: none;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  display: inline-block;
+  & .c-button__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  & .c-button__label {
+    color: var(--color-blue);
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+}
+/* ----------------------------------------
+BUTTON - PRIMARY
+---------------------------------------- */
+.c-button--primary {
+  & .c-button__icon {
+    margin-right: 1rem;
+    line-height: 1;
+  }
+  & .c-button__label {
+    color: var(--color-blue);
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+  & .is-reversed {
+    & .c-button__icon {
+      margin-left: 1rem;
+      margin-right: 0;
+    }
+  }
+}
+/* ----------------------------------------
+BUTTON - PILL
+---------------------------------------- */
+.c-button--pill {
+  background-color: var(--color-blue);
+  padding: 0 3rem;
+  color: white;
+  font-size: 1.4rem;
+  height: 4.4rem;
+  line-height: 4.4rem;
+  border-radius: 9999px;
+}
+/* ----------------------------------------
+BUTTON - MORE
+---------------------------------------- */
+.c-button--more {
+  position: relative;
+  font-size: 1.4rem;
+  &:after {
+    content: "";
+    position: absolute;
+    top: -0.2rem;
+    left: -1.2rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: #f4f4f4;
+    background-color: var(--color-grey-10);
+    z-index: -1;
+    border-radius: 50%;
+    transition: all .3s ease;
+  }
+}
+.is-desktop {
+  & .c-button--more:hover {
+    &:after {
+      left: -2.7rem;
+      background-color: var(--color-blue);
+    }
+  }
+}

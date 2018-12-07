@@ -1,0 +1,217 @@
+body {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.home-page {
+  & header {
+    height: 0;
+    & .header-container-inner {
+      display: none;
+    }
+  }
+  & footer {
+    display: none;
+  }
+  & .splash-container2 {
+    display: none;
+  }
+  & .intro-splash-container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background-color: white;
+    & .intro-splash-container-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      max-width: 45rem;
+      margin: auto;
+      flex-direction: column;
+      & .logo {
+        margin-bottom: 3rem;
+        & svg {
+          opacity: 0;
+        }
+        &.visible {
+          transform: translate(0, 0);
+          opacity: 1;
+        }
+      }
+      & .intro-splash-text {
+        & p {
+          color: #000000;
+          font-family: "adobe-garamond-pro";
+          font-size: 20px;
+          line-height: 32px;
+          text-align: center;
+          margin: auto;
+          width: 90%;
+          min-height: 10rem;
+          opacity: 0;
+           @media (--bp-lg) {
+            width: 100%;
+           }
+        }
+        &.visible {
+          transform: translate(0, 0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.home-page {
+  & h2 {
+    color: #ffffff;
+    font-family: "adobe-garamond-pro";
+    font-size: 26px;
+    line-height: 31px;
+    margin-bottom: 0;
+    font-weight: 500;
+  }
+  & .number {
+    color: #ffffff;
+    font-family: "adobe-garamond-pro";
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 1rem;
+  }
+  & .splash-container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    & .splash-container-header {
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2rem;
+      padding-top: 3rem;
+      & .splash-logo {
+        width: 12rem;
+      }
+      & .header-menu-icon {
+        cursor: pointer;
+      }
+      & g,
+      & path {
+        fill: white;
+      }
+      & rect {
+        stroke: white;
+      }
+    }
+
+    & .arrow-icon {
+      position: absolute;
+      z-index: 4;
+      bottom: 50px;
+      right: 50px;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+    }
+    & .splash-container-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      margin: auto;
+    }
+    & .category-container {
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      @media (--bp-lg) {
+        width: 25%;
+      }
+      &:hover {
+        width: 30%;
+        & .category-container-image {
+          opacity: 0.8;
+        }
+        & .category-container-innner {
+          transform: translate(0, -100px);
+        }
+        & svg {
+          opacity: 1;
+          right: 40px;
+        }
+      }
+      & .category-container-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        opacity: 0.6;
+        transition: all 0.3s ease-in-out;
+        z-index: 1;
+      }
+    }
+
+    & .category-container-innner {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      z-index: 2;
+      padding-left: 4rem;
+      padding-bottom: 5rem;
+      transition: all 0.3s ease-in-out;
+      & .category-title-container {
+        margin-bottom: 7rem;
+      }
+    }
+  }
+
+  & .swiper-container {
+    width: 100%;
+  }
+  & .swiper-button-prev {
+    background-image: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    border-radius: 9999px;
+    width: 40px;
+    height: 40px;
+    outline: none;
+    &.swiper-button-disabled {
+      display: none;
+    }
+  }
+  & .swiper-button-next {
+    background-image: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    border-radius: 9999px;
+    width: 40px;
+    height: 40px;
+    outline: none;
+    &.swiper-button-disabled {
+      display: none;
+    }
+  }
+}

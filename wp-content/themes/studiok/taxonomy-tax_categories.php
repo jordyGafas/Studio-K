@@ -206,15 +206,27 @@
             <div class="inspiratie-container-inner">
             <div class="grid">
                 <div class="grid-sizer"></div>
-                <?php 
+                <?php
+                    $idInspirationCategory = 0;
+                    if($currentTerm->term_id==2){
+                        $idInspirationCategory = 12;
+                    }else if($currentTerm->term_id==6){
+                        $idInspirationCategory = 13;
+                    }
+                    else if($currentTerm->term_id==7){
+                        $idInspirationCategory = 14;
+                    }
+                    else if($currentTerm->term_id==8){
+                        $idInspirationCategory = 15;
+                    }
                     query_posts(array( 
                         'post_per_page' => '-1',
                         'post_type' => 'cpt_inspirations',
                         'tax_query' => array(
                             array(
                                 'taxonomy' => 'tax_categories_inspirations',
-                                'field'    => 'slug',
-                                'terms' => $currentTerm->name
+                                'field'    => 'term_id',
+                                'terms' => $idInspirationCategory
                             )
                     )) );  
                 ?> 

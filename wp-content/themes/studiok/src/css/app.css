@@ -1161,3 +1161,23 @@
     height: 30rem;
   }
 }
+
+.lp figure {
+  padding-bottom: 18.5%;
+}
+
+.lp figure img {
+  object-fit: cover;
+}
+
+.cpt_projects_single .project-grid .full-width, .cpt_projects_single .project-grid .hh, .cpt_projects_single .project-grid .hhl, .cpt_projects_single .project-grid .lp, .cpt_projects_single .project-grid .pl {
+    margin-bottom: 1.8375rem;
+}
+
+.cpt_projects_single .full-width .col:not(:last-child), .cpt_projects_single .hh .col:not(:last-child), .cpt_projects_single .hhl .col:not(:last-child), .cpt_projects_single .lp .col:not(:last-child), .cpt_projects_single .pl .col:not(:last-child) {
+    margin-bottom: 1.8375rem;
+}
+
+.ll .i-ratio.i-ratio--56:after{
+  padding-bottom: 43.95%;
+}

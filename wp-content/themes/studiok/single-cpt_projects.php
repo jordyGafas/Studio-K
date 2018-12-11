@@ -119,7 +119,7 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<div class="project-grid js-project-grid">
+<div class="project-grid js-project-grid">
 		<?php $count = 1; ?>
 		<?php if ( have_rows('project_grid') ): ?>
 		<?php while ( have_rows('project_grid') ) : the_row(); ?>
@@ -256,6 +256,171 @@ get_header(); ?>
 					<div class="grid-quote-inner">
 						<?php echo get_sub_field('quote_text') ?>
 					</div>
+				</div>
+			</div>
+		</div>
+		<?php $count++; ?>
+		<?php elseif ( get_row_layout() == 'p_p' ): ?>
+		<div class="row lp" data-row="<?php echo $count; ?>">
+			<div class="row">
+			<div class="col sm-12 md-6 lg-6">
+					<figure class="lp_p__image image-holder i-ratio i-ratio--112 fit">
+						<?php if ( get_sub_field('p_p_p1_caption') ) { ?>
+						<figcaption data-caption-id="" class="image-caption">
+							<div class="image-caption__inner">
+								<?php the_sub_field('p_p_p1_caption'); ?>
+							</div>
+						</figcaption>
+						<?php } ?>
+						<?php
+												$image2 = get_sub_field('p_p_p1_image');
+												$url2 = $image2['url'];
+												$alt2 = $image2['alt'];
+												$width2 = $image2['width'];
+												$height2 = $image2['height'];
+												$image_ratio2 = $image2['width'] / $image2['height'];
+
+												$size_lg2 = 'thumb-large';
+												$size_md2 = 'thumb-medium';
+												$size_sm2 = 'thumb-small';
+
+												$thumb_lg2 = $image2['sizes'][ $size_lg2 ];
+												$thumb_md2 = $image2['sizes'][ $size_md2 ];
+												$thumb_sm2 = $image2['sizes'][ $size_sm2 ];
+
+												$width_lg2 = $image2['sizes'][ $size_lg2 . '-width' ];
+												$width_md2 = $image2['sizes'][ $size_md2 . '-width' ];
+												$width_sm2 = $image2['sizes'][ $size_sm2 . '-width' ];
+
+											?>
+						<?php if ( ! empty( $image2 ) ) : ?>
+						<img src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="<?php echo $url2; ?>"
+						 sizes="(max-width: 40em) 100vw, 50vw" data-srcset="<?php echo $url2; ?> <?php echo $width2; ?>w, <?php echo $thumb_lg2; ?> <?php echo $width_lg2; ?>w, <?php echo $thumb_md2; ?> <?php echo $width_md2; ?>w, <?php echo $thumb_sm2; ?> <?php echo $width_sm2; ?>w"
+						 width="<?php echo $width2; ?>" height="<?php echo $height2; ?>" data-ratio="<?php echo $image_ratio2; ?>" class="lazy u-full"
+						 alt="<?php echo $alt2; ?>">
+						<?php endif; ?>
+				</div>
+				</figure>
+			
+				<div class="col sm-12 md-6 lg-6">
+					<figure class="lp_p__image image-holder i-ratio i-ratio--112 fit">
+						<?php if ( get_sub_field('p_p_p2_caption') ) { ?>
+						<figcaption data-caption-id="" class="image-caption">
+							<div class="image-caption__inner">
+								<?php the_sub_field('p_p_p2_caption'); ?>
+							</div>
+						</figcaption>
+						<?php } ?>
+						<?php
+												$image2 = get_sub_field('p_p_p2_image');
+												$url2 = $image2['url'];
+												$alt2 = $image2['alt'];
+												$width2 = $image2['width'];
+												$height2 = $image2['height'];
+												$image_ratio2 = $image2['width'] / $image2['height'];
+
+												$size_lg2 = 'thumb-large';
+												$size_md2 = 'thumb-medium';
+												$size_sm2 = 'thumb-small';
+
+												$thumb_lg2 = $image2['sizes'][ $size_lg2 ];
+												$thumb_md2 = $image2['sizes'][ $size_md2 ];
+												$thumb_sm2 = $image2['sizes'][ $size_sm2 ];
+
+												$width_lg2 = $image2['sizes'][ $size_lg2 . '-width' ];
+												$width_md2 = $image2['sizes'][ $size_md2 . '-width' ];
+												$width_sm2 = $image2['sizes'][ $size_sm2 . '-width' ];
+
+											?>
+						<?php if ( ! empty( $image2 ) ) : ?>
+						<img src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="<?php echo $url2; ?>"
+						 sizes="(max-width: 40em) 100vw, 50vw" data-srcset="<?php echo $url2; ?> <?php echo $width2; ?>w, <?php echo $thumb_lg2; ?> <?php echo $width_lg2; ?>w, <?php echo $thumb_md2; ?> <?php echo $width_md2; ?>w, <?php echo $thumb_sm2; ?> <?php echo $width_sm2; ?>w"
+						 width="<?php echo $width2; ?>" height="<?php echo $height2; ?>" data-ratio="<?php echo $image_ratio2; ?>" class="lazy u-full"
+						 alt="<?php echo $alt2; ?>">
+						<?php endif; ?>
+				</div>
+				</figure>
+			</div>
+		</div>
+		<?php $count++; ?>
+		<?php elseif ( get_row_layout() == 'l_l' ): ?>
+		<div class="row lp ll" data-row="<?php echo $count; ?>">
+			<div class="row">
+				<div class="col sm-12 md-6 lg-6">
+					<figure class="lp_l__image image-holder i-ratio i-ratio--56 fit">
+						<?php if ( get_sub_field('l_l_l1_caption') ) { ?>
+						<figcaption data-caption-id="" class="image-caption">
+							<div class="image-caption__inner">
+								<?php the_sub_field('l_l_l1_caption'); ?>
+							</div>
+						</figcaption>
+						<?php } ?>
+						<?php
+												$image = get_sub_field('l_l_l1_image');
+												$url = $image['url'];
+												$alt = $image['alt'];
+												$width = $image['width'];
+												$height = $image['height'];
+												$image_ratio = $image['width'] / $image['height'];
+
+												$size_lg = 'thumb-large';
+												$size_md = 'thumb-medium';
+												$size_sm = 'thumb-small';
+
+												$thumb_lg = $image['sizes'][ $size_lg ];
+												$thumb_md = $image['sizes'][ $size_md ];
+												$thumb_sm = $image['sizes'][ $size_sm ];
+
+												$width_lg = $image['sizes'][ $size_lg . '-width' ];
+												$width_md = $image['sizes'][ $size_md . '-width' ];
+												$width_sm = $image['sizes'][ $size_sm . '-width' ];
+
+											?>
+						<?php if ( ! empty( $image ) ) : ?>
+						<img src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="<?php echo $url; ?>"
+						 sizes="(max-width: 40em) 100vw, 50vw" data-srcset="<?php echo $url; ?> <?php echo $width; ?>w, <?php echo $thumb_lg; ?> <?php echo $width_lg; ?>w, <?php echo $thumb_md; ?> <?php echo $width_md; ?>w, <?php echo $thumb_sm; ?> <?php echo $width_sm; ?>w"
+						 width="<?php echo $width; ?>" height="<?php echo $height; ?>" data-ratio="<?php echo $image_ratio; ?>" class="lazy u-full"
+						 alt="<?php echo $alt; ?>">
+						<?php endif; ?>
+					</figure>
+				</div>
+				<div class="col sm-12 md-6 lg-6">
+					<figure class="lp_l__image image-holder i-ratio i-ratio--56 fit">
+						<?php if ( get_sub_field('l_l_l2_caption') ) { ?>
+						<figcaption data-caption-id="" class="image-caption">
+							<div class="image-caption__inner">
+								<?php the_sub_field('l_l_l2_caption'); ?>
+							</div>
+						</figcaption>
+						<?php } ?>
+						<?php
+												$image = get_sub_field('l_l_l2_image');
+												$url = $image['url'];
+												$alt = $image['alt'];
+												$width = $image['width'];
+												$height = $image['height'];
+												$image_ratio = $image['width'] / $image['height'];
+
+												$size_lg = 'thumb-large';
+												$size_md = 'thumb-medium';
+												$size_sm = 'thumb-small';
+
+												$thumb_lg = $image['sizes'][ $size_lg ];
+												$thumb_md = $image['sizes'][ $size_md ];
+												$thumb_sm = $image['sizes'][ $size_sm ];
+
+												$width_lg = $image['sizes'][ $size_lg . '-width' ];
+												$width_md = $image['sizes'][ $size_md . '-width' ];
+												$width_sm = $image['sizes'][ $size_sm . '-width' ];
+
+											?>
+						<?php if ( ! empty( $image ) ) : ?>
+						<img src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="<?php echo $url; ?>"
+						 sizes="(max-width: 40em) 100vw, 50vw" data-srcset="<?php echo $url; ?> <?php echo $width; ?>w, <?php echo $thumb_lg; ?> <?php echo $width_lg; ?>w, <?php echo $thumb_md; ?> <?php echo $width_md; ?>w, <?php echo $thumb_sm; ?> <?php echo $width_sm; ?>w"
+						 width="<?php echo $width; ?>" height="<?php echo $height; ?>" data-ratio="<?php echo $image_ratio; ?>" class="lazy u-full"
+						 alt="<?php echo $alt; ?>">
+						<?php endif; ?>
+					</figure>
 				</div>
 			</div>
 		</div>

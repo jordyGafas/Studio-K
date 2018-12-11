@@ -22,4 +22,5 @@
 @custom-media --bp-lg (min-width: 1024px);
 @custom-media --bp-xl (min-width: 1280px);
 @custom-media --bp-xxl (min-width: 1440px);
+@custom-media --bp-xxl-retina (-webkit-min-device-pixel-ratio: 2);
 @custom-media --bp-xxxl (min-width: 2000px);

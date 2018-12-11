@@ -6,7 +6,7 @@
     <div class="header-hero-container-inner">
         <div class="hero-quote-container">
             <div class="hero-quote-text">
-               <?php echo get_field('quote_text', $term); ?>
+               <h1><?php echo get_field('quote_text', $term); ?></h1>
             </div>
             <div class="hero-quote-author">
             <?php echo get_field('quote_author', $term); ?>

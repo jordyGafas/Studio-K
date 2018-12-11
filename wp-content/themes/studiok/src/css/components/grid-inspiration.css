@@ -19,6 +19,9 @@
   @media (--bp-md) {
     width: calc(25% - 10px);
   }
+  @media (--bp-xxl-retina) and (--bp-xxl) {
+    width: calc(20% - 10px);
+  }
   & img {
     width: 100%;
   }

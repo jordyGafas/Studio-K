@@ -219,6 +219,18 @@
                     else if($currentTerm->term_id==8){
                         $idInspirationCategory = 15;
                     }
+                    else if($currentTerm->term_id==17){
+                         $idInspirationCategory = 21;
+                    }
+                    else if($currentTerm->term_id==18){
+                         $idInspirationCategory = 22;
+                    }
+                    else if($currentTerm->term_id==19){
+                        $idInspirationCategory = 23;
+                    }
+                    else if($currentTerm->term_id==20){
+                        $idInspirationCategory = 24;
+                    }
                     query_posts(array( 
                         'post_per_page' => '-1',
                         'post_type' => 'cpt_inspirations',

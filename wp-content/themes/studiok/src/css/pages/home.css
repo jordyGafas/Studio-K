@@ -139,19 +139,6 @@ body {
       @media (--bp-lg) {
         width: 25%;
       }
-      &:hover {
-        width: 30%;
-        & .category-container-image {
-          opacity: 0.8;
-        }
-        & .category-container-innner {
-          transform: translate(0, -100px);
-        }
-        & svg {
-          opacity: 1;
-          right: 40px;
-        }
-      }
       & .category-container-image {
         position: absolute;
         width: 100%;
@@ -212,6 +199,28 @@ body {
     outline: none;
     &.swiper-button-disabled {
       display: none;
+    }
+  }
+}
+
+.is-desktop {
+  & .home-page {
+    & .splash-container {
+      & .category-container {
+        &:hover {
+          width: 30%;
+          & .category-container-image {
+            opacity: 0.8;
+          }
+          & .category-container-innner {
+            transform: translate(0, -100px);
+          }
+          & svg {
+            opacity: 1;
+            right: 40px;
+          }
+        }
+      }
     }
   }
 }

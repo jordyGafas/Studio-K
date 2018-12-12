@@ -43,7 +43,7 @@
 		echo " home"; } else if(is_page_template("templates/tpl-about.php")){ echo
  "about-page" ; } else if(is_page_template("templates/tpl-nieuws.php")){ echo "nieuws-page" ; } else
  if(is_page_template("templates/tpl-contact.php")){ echo "contact-page" ; } else if(is_page_template("templates/tpl-home.php")){
- echo "home-page" ; } else if(is_page_template("templates/tpl-inspiratie.php")){ echo "inspiratie-page" ; } else { echo
+ echo "home-page" ; } else if(is_page_template("templates/tpl-inspiratie.php")){ echo "inspiratie-page" ; } else if(is_tax('tax_categories')) { echo "cpt_projects";} else { echo
  get_post_type().(is_single()?"_single":"") ; } ?>">
 
 	<?php

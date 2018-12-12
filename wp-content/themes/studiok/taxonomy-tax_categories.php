@@ -179,7 +179,7 @@
                     <?php while (have_posts()) : the_post(); ?>
                         <a href="<?php the_permalink() ?>" class="project-container">
                             <div class="project-container-inner">
-                                <div class="project-image lazy" data-src="<?php echo get_field('project_image')['url'] ?>" style='background-image: url("");'>
+                                <div class="project-image lazy" data-src="<?php echo get_the_post_thumbnail_url() /*get_field('project_image')['url']*/ ?>" style='background-image: url("");'>
                                     
                                 </div>
                                 <div class="project-description">

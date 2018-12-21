@@ -85,83 +85,6 @@
     </div>
 </div>
 
-
-<div class="slider-awards-container">
-    <div class="slider-awards-container-inner row">
-        <div class="column">
-            <!-- Slider main container -->
-            <div class="swiper-awards-image swiper-container">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <?php 
-                        query_posts(array( 
-                            'post_per_page' => '-1',
-                            'post_type' => 'post',
-                            'tax_query' => array(
-                                array(
-                                    'taxonomy' => 'category',
-                                    'field'    => 'name',
-                                    'terms' => array( 'Publicaties', 'Awards' )
-                                )
-                        )) );  
-                    ?> 
-                        <?php while (have_posts()) : the_post(); ?>
-
-                            <div class="swiper-slide swiper-lazy" style='background-image: url("<?php the_field('banner') ?>");'>
-                    
-                            </div>
-                    <?php endwhile;?>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <!-- Slider main container -->
-            <div class="swiper-title">
-                <?php echo get_field('slider_title', $currentTerm); ?>
-            </div>
-            <div class="swiper-awards-text swiper-container">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <?php 
-                        query_posts(array( 
-                            'post_per_page' => '-1',
-                            'post_type' => 'post',
-                            'tax_query' => array(
-                                array(
-                                    'taxonomy' => 'category',
-                                    'field'    => 'slug',
-                                    'terms' => array( 'publicaties', 'awards', "publications" )
-                                )
-                        )) );  
-                    ?> 
-                        <?php while (have_posts()) : the_post(); ?>
-
-                        <div class="swiper-slide">
-                            <div class="swiper-slide-inner">
-                                <div class="slide-title">
-                                   <?php the_title() ?>
-                                </div>
-                                <div class="slide-subtitle">
-                                    <?php  echo substr(get_the_content(), 0, 100)."..."; ?>
-                                </div>
-                                <a href="<?php the_permalink() ?>" class="slide-read-more">
-                                    lees meer
-                                </a>
-                            </div>
-                        </div>
-                    <?php endwhile;?>
-                </div>
-
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"><svg height="50" viewBox="0 0 50 50" width="50" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="matrix(-1 0 0 -1 50 50)"><rect fill="none" height="49" rx="24.5" stroke="#dedcd4" width="49" x=".5" y=".5"/><path d="m31.000004 24.6664066c-.0090278-.1045334-.0519013-.2440913-.1203656-.3223685l-3.6111115-4.1754465c-.1575215-.2181838-.4822977-.2174617-.6821871-.0390182-.1998895.1784435-.2151284.4955043-.0400376.6837552l2.9114611 3.3618499h-10.9762818c-.2658981 0-.4814815.2199228-.4814815.4912281s.2155834.4912281.4814815.4912281h10.9762818l-2.9114587 3.3618425c-.1910519.1882386-.1373234.5110738.0625685.6895124.1998895.1784386.5021347.1657158.6596562-.0447755l3.6111115-4.1754391c.0965154-.1066701.1149297-.2224281.1203632-.3223684z" fill="#000" fill-rule="nonzero"/></g></svg></div>
-                <div class="swiper-button-next"><svg height="50" viewBox="0 0 50 50" width="50" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><rect fill="none" height="49" rx="24.5" stroke="#dedcd4" width="49" x=".5" y=".5"/><path d="m31.000004 24.6664066c-.0090278-.1045334-.0519013-.2440913-.1203656-.3223685l-3.6111115-4.1754465c-.1575215-.2181838-.4822977-.2174617-.6821871-.0390182-.1998895.1784435-.2151284.4955043-.0400376.6837552l2.9114611 3.3618499h-10.9762818c-.2658981 0-.4814815.2199228-.4814815.4912281s.2155834.4912281.4814815.4912281h10.9762818l-2.9114587 3.3618425c-.1910519.1882386-.1373234.5110738.0625685.6895124.1998895.1784386.5021347.1657158.6596562-.0447755l3.6111115-4.1754391c.0965154-.1066701.1149297-.2224281.1203632-.3223684z" fill="#000" fill-rule="nonzero"/></g></svg></div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="projects-section-container <?php echo wp_count_posts('cpt_projects')->publish; if(wp_count_posts('cpt_projects')->publish%2==0){echo ' even';} ?>" style="background-color:<?php the_field('color', $currentTerm); ?>">
     <a href="<?php echo get_page_link(72); ?>" class="float-square"><div class="float-square-inner"><?php echo get_field('project_float_text', $currentTerm); ?>
         </div>
@@ -174,7 +97,14 @@
                 <?php 
                     query_posts(array( 
                         'post_type' => 'cpt_projects',
-                    ) );  
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'tax_categories',
+                                'field'    => 'term_id',
+                                'terms' => $currentTerm->term_id
+                            )
+                    ))
+                    );  
                 ?> 
                     <?php while (have_posts()) : the_post(); ?>
                         <a href="<?php the_permalink() ?>" class="project-container">
@@ -252,7 +182,81 @@
         </div>
     </div>
 </div>
+<div class="slider-awards-container">
+    <div class="slider-awards-container-inner row">
+        <div class="column">
+            <!-- Slider main container -->
+            <div class="swiper-awards-image swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <?php 
+                        query_posts(array( 
+                            'post_per_page' => '-1',
+                            'post_type' => 'post',
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'category',
+                                    'field'    => 'name',
+                                    'terms' => array( 'Publicaties', 'Awards' )
+                                )
+                        )) );  
+                    ?> 
+                        <?php while (have_posts()) : the_post(); ?>
 
+                            <div class="swiper-slide swiper-lazy" style='background-image: url("<?php the_field('banner') ?>");'>
+                    
+                            </div>
+                    <?php endwhile;?>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <!-- Slider main container -->
+            <div class="swiper-title">
+                <?php echo get_field('slider_title', $currentTerm); ?>
+            </div>
+            <div class="swiper-awards-text swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <?php 
+                        query_posts(array( 
+                            'post_per_page' => '-1',
+                            'post_type' => 'post',
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'category',
+                                    'field'    => 'slug',
+                                    'terms' => array( 'publicaties', 'awards', "publications" )
+                                )
+                        )) );  
+                    ?> 
+                        <?php while (have_posts()) : the_post(); ?>
+
+                        <div class="swiper-slide">
+                            <div class="swiper-slide-inner">
+                                <div class="slide-title">
+                                   <?php the_title() ?>
+                                </div>
+                                <div class="slide-subtitle">
+                                    <?php  echo substr(get_the_content(), 0, 100)."..."; ?>
+                                </div>
+                                <a href="<?php the_permalink() ?>" class="slide-read-more">
+                                    lees meer
+                                </a>
+                            </div>
+                        </div>
+                    <?php endwhile;?>
+                </div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"><svg height="50" viewBox="0 0 50 50" width="50" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="matrix(-1 0 0 -1 50 50)"><rect fill="none" height="49" rx="24.5" stroke="#dedcd4" width="49" x=".5" y=".5"/><path d="m31.000004 24.6664066c-.0090278-.1045334-.0519013-.2440913-.1203656-.3223685l-3.6111115-4.1754465c-.1575215-.2181838-.4822977-.2174617-.6821871-.0390182-.1998895.1784435-.2151284.4955043-.0400376.6837552l2.9114611 3.3618499h-10.9762818c-.2658981 0-.4814815.2199228-.4814815.4912281s.2155834.4912281.4814815.4912281h10.9762818l-2.9114587 3.3618425c-.1910519.1882386-.1373234.5110738.0625685.6895124.1998895.1784386.5021347.1657158.6596562-.0447755l3.6111115-4.1754391c.0965154-.1066701.1149297-.2224281.1203632-.3223684z" fill="#000" fill-rule="nonzero"/></g></svg></div>
+                <div class="swiper-button-next"><svg height="50" viewBox="0 0 50 50" width="50" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><rect fill="none" height="49" rx="24.5" stroke="#dedcd4" width="49" x=".5" y=".5"/><path d="m31.000004 24.6664066c-.0090278-.1045334-.0519013-.2440913-.1203656-.3223685l-3.6111115-4.1754465c-.1575215-.2181838-.4822977-.2174617-.6821871-.0390182-.1998895.1784435-.2151284.4955043-.0400376.6837552l2.9114611 3.3618499h-10.9762818c-.2658981 0-.4814815.2199228-.4814815.4912281s.2155834.4912281.4814815.4912281h10.9762818l-2.9114587 3.3618425c-.1910519.1882386-.1373234.5110738.0625685.6895124.1998895.1784386.5021347.1657158.6596562-.0447755l3.6111115-4.1754391c.0965154-.1066701.1149297-.2224281.1203632-.3223684z" fill="#000" fill-rule="nonzero"/></g></svg></div>
+            </div>
+        </div>
+    </div>
+</div>
     <div class="contact-container" style="background-color:<?php the_field('color', $currentTerm); ?>">
         <a href="<?php echo get_page_link(72); ?>">
             <div class="contact-container-inner row">

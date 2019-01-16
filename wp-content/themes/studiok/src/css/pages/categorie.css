@@ -25,7 +25,7 @@ Hero & Menu
     z-index: 3;
     background-color: white;
     display: none;
-    &.visible{
+    &.visible {
       @media (--bp-md) {
         display: block;
       }
@@ -52,7 +52,7 @@ Hero & Menu
         & a {
           display: flex;
           justify-content: center;
-          color: #222120;;
+          color: #222120;
           font-family: "adobe-garamond-pro";
           font-size: 20px;
           line-height: 25px;
@@ -88,6 +88,26 @@ Hero & Menu
     width: 100vw;
     height: 100vh;
     position: relative;
+    & .swiper-img {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      transition: all .4s ease;
+      transform:scale(1);
+    }
+    & .swiper-slide-active{
+      & .swiper-img{
+        transform: scale(1.05);
+        opacity: 1;
+        transition: all 3.8s ease;
+      }
+    }
     & .header-hero-background {
       background-position: center;
       background-size: cover;
@@ -106,20 +126,20 @@ Hero & Menu
       align-items: center;
       width: 100%;
       height: 100%;
-      position: relative;
+      position: absolute;
+      top:0;
+      background-color: rgba(0,0,0,0.4);
       & .hero-quote-container {
         text-align: center;
         max-width: 44rem;
         width: 90%;
         & .hero-quote-text {
           color: #ffffff;
-          font-family: "adobe-garamond-pro"; 
+          font-family: "adobe-garamond-pro";
+          font-size: 2.9rem;
+          line-height: 3.2rem;
           text-align: center;
           margin-bottom: 2.5rem;
-          & h1 {
-            font-size: 3.5rem;
-            line-height: 4.5rem;
-          }
           @media (--bp-lg) {
             font-size: 4.2rem;
             line-height: 4.6rem;
@@ -137,7 +157,36 @@ Hero & Menu
         }
       }
     }
-
+    & button.scroll_down {
+      position: absolute;
+      z-index: 3;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      height: 35px;
+      width: 20px;
+      bottom: 60px;
+      background-color: transparent;
+      border: 1px solid white;
+      border-radius: 20px;
+      cursor: pointer;
+      outline: none;
+    }
+    & button.scroll_down:before {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      content: '';
+      width: 4px;
+      height: 4px;
+      margin-left: -2px;
+      background-color: #fff;
+      border-radius: 100%;
+      -webkit-animation: scroll_down_btn-animation 2s infinite;
+      animation: scroll_down_btn-animation 2s infinite;
+      box-sizing: border-box;
+    }
     & .hero-menu {
       position: absolute;
       bottom: 0;
@@ -145,7 +194,7 @@ Hero & Menu
       height: 8.6rem;
       z-index: 3;
       display: none;
-      &.visible{
+      &.visible {
         display: block;
       }
       & ul {
@@ -205,10 +254,13 @@ Hero & Menu
   & .intro-container {
     position: relative;
     display: flex;
-    margin: 13rem 0;
+    margin: 7rem 0;
     width: 100vw;
     justify-content: center;
     flex-direction: column;
+    @media (--bp-lg) {
+      margin: 13rem 0;
+    }
     & .intro-container-inner {
       max-width: 70rem;
       text-align: center;
@@ -414,6 +466,7 @@ Projects
 *****************/
 
   & .projects-section-container {
+    overflow:-webkit-paged-x;
     background-color: #eadfd9;
     &.even {
       @media (--bp-lg) {
@@ -565,10 +618,11 @@ Projects
                   height: 3rem;
                   border: 1px solid black;
                   border-radius: 9999px;
-                  transform: translate(0px, 11px);
+                  transform: translate(0px, 9px);
                   @media (--bp-lg) {
                     width: 5rem;
                     height: 5rem;
+                    transform: translate(0px, 11px);
                   }
                 }
               }
@@ -596,8 +650,12 @@ Projects
   }
 
   & .inspiratie-section {
-    padding-top: 13rem;
-    padding-bottom: 13rem;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    @media(--bp-lg){
+      padding-top: 13rem;
+      padding-bottom: 13rem;
+    }
     & .inspiratie-section-inner {
       width: 100%;
       & .inspiratie-container {
@@ -606,3 +664,38 @@ Projects
     }
   }
 }
+
+@keyframes scroll_down_btn-animation {
+      0% {
+        transform: translate(0, 0);
+        opacity: 0;
+      }
+      40% {
+        opacity: 1;
+      }
+      80% {
+        transform: translate(0, 15px);
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    @-webkit-keyframes scroll_down_btn-animation {
+      0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+        opacity: 0;
+      }
+      40% {
+        opacity: 1;
+      }
+      80% {
+        -webkit-transform: translate(0, 15px);
+        transform: translate(0, 15px);
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }

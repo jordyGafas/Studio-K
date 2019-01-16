@@ -238,6 +238,55 @@
     @media (min-width: 640px) {
       margin-bottom: 10rem;
     }
+    & .image-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      width:100%;
+      & .img-holder {
+        position: relative;
+        overflow:hidden;
+        background-color: #efefef;
+      }
+      & .single-image{
+        margin: 0px 0px 5px 0px;
+        flex: 0 1 100%;
+        @media (min-width: 640px) {
+          margin: 5px 5px;
+          flex:1;
+         }
+        & img {
+          width:100%;
+        }
+      }
+      & .portrait-img {
+        margin: 0px 0px 5px 0px;
+        flex: 0 1 100%;
+        @media (min-width: 640px) {
+          margin: 5px 5px;
+          flex:1;
+        }
+        & img {
+          width:100%;
+        }
+        & .img-holder
+        {
+          padding-bottom:calc(112% + 2px);
+        }
+      }
+      & .landscape-img{
+        margin: 0px 0px 5px 0px;
+        flex: 0 1 100%;
+        @media (min-width: 640px) {
+          margin: 5px 5px;
+          flex:2;
+        }
+        & img {
+          width:100%;
+        }
+      }
+    }
     & .full-width,
     & .hh,
     & .hhl,

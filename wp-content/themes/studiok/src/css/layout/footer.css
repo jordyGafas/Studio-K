@@ -77,6 +77,10 @@ footer {
           display: flex;
           height: 100%;
           align-items: center;
+          flex-direction: row;
+          @media (--bp-lg){
+            flex-direction: column;   
+          }
           & svg {
             &:first-of-type {
               margin-right: 1.5rem;

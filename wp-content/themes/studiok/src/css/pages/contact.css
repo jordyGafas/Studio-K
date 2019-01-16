@@ -1,11 +1,13 @@
 .contact-page {
-  & a {
-    color: #222120;
-    font-family: Interstate;
-    font-size: 18px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-    line-height: 28px;
+  & .content {
+    & a {
+      color: #222120;
+      font-family: Interstate;
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      line-height: 28px;
+    }
   }
   & .contact-page-container {
     background-color: rgb(233, 237, 242);

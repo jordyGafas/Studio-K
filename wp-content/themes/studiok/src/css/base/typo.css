@@ -21,6 +21,7 @@ h2 {
   font-weight: bold;
   color: white;
   display: inline-block;
+  text-transform: capitalize;
   margin-bottom: 3rem;
   width: fit-content;
   @media (--bp-lg) {
@@ -29,6 +30,7 @@ h2 {
     font-weight: bold;
     color: white;
     display: inline-block;
+    text-transform: capitalize;
     margin-bottom: 4rem;
     width: fit-content;
   }

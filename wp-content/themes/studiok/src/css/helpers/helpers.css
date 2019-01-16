@@ -125,9 +125,7 @@ img {
   }
   &.i-ratio--112 {
     &:after {
-      /*padding-bottom: 116.50%;*/
-      padding-bottom: -webkit-calc(112.50% + 10px);
-      padding-bottom: calc(112.50% + 10px);
+      padding-bottom: 116.50%;
     }
   }
   &.i-ratio--133 {

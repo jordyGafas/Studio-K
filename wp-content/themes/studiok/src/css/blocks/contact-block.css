@@ -1,9 +1,12 @@
 .contact-container {
   background-color: #e9edf2;
   & a {
-    padding: 13.7rem 0;
+    padding: 9.7rem 0;
     width: 100%;
     display: block;
+    @media (--bp-lg ){
+      padding: 13.7rem 0;
+    }
   }
   & .contact-container-inner {
     display: flex;
